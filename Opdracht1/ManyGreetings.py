@@ -1,3 +1,3 @@
-naam = input("Wat is je naam? ")
-greetings=input("Hoeveel groeten wil je? ")
-print(greetings+' x gegroet, '+naam+'!')
+naam = input("What is your name? ")
+greetings=input("How many greetings? ")
+print(greetings+' x Hello, '+naam+'!')
