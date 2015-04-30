@@ -1,0 +1,27 @@
+import time
+import sys
+
+x=input("Geef een geheel getal N: ")
+x=int(x)
+
+T1 = time.perf_counter()
+
+def zeef(n):
+    nietpriem = []
+    priem = []
+    for i in range(2, n+1):
+        if i not in nietpriem:
+            priem.append(i)
+            f = open("prime.dat", "w")
+            f.write("\n".join(map(lambda x: str(x), priem)))
+            f.close()
+            for j in range(i*i, n+1, i):
+                nietpriem.append(j)
+               
+
+zeef(x)
+
+T2 = time.perf_counter() 
+
+print(len(sys.argv), 'priemgetallen gevonden in ', T2 - T1, 'seconden')
+print('Argument List:', str(sys.argv)) 
