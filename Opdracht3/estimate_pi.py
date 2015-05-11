@@ -11,8 +11,8 @@ hits = 0
 
 def drop_needle(L):
     x = random.uniform(0,0.5)
-    y = random.uniform(0,math.pi/2)
-    if L*math.cos(y)/2>x:
+    phi = random.uniform(0,math.pi/2)
+    if L*math.cos(phi)/2>x:
         return True
         
 for i in range(0,needle_amount):
