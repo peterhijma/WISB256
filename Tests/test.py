@@ -1,23 +1,13 @@
-import time
-import sys
+import random
 import math
 
-n=int(sys.argv[1])
-
-T1 = time.perf_counter()
-document=open(sys.argv[2],'w')
-
-nietpriem = set()
-priem = []
-for i in range(2, n):
-    if i in nietpriem:
-        continue
-    for j in range(i*i, n+1, i):
-        nietpriem.add(j)
-    priem.append(i)          
-document.write("\n".join(map(str, priem)))
-document.close()
-T2 = time.perf_counter() 
-
-print(str(len(priem)), 'priemgetallen gevonden in ', T2 - T1, 'seconden')
-print('Argument List:', str(sys.argv))
+def direct_needle(n):
+   n_hits=0
+   for i in range(n):
+      x_center=random.uniform(0.,0.5)
+      phi=random.uniform(0,math.pi/2)
+      x_tip=x_center - math.cos(phi)/2.
+      if x_tip < 0: n_hits += 1
+   return n_hits
+for k in range(10):
+   print k, direct_needle(100000)
