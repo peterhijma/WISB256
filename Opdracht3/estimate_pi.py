@@ -19,6 +19,6 @@ for i in range(0,needle_amount):
     if drop_needle(needle_length) == True:
         hits += 1
         
-pi = round (2*needle_length*needle_amount/hits,5)
+pi = round (2*needle_length*needle_amount/hits,6)
         
 print(str(hits) +" hits in "+ str(needle_amount) + " tries \nPi = "+ str(pi))
