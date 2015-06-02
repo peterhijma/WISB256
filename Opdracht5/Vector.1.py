@@ -35,3 +35,7 @@ class Vector:
 
     def norm(self):
         return math.sqrt(self.inner(self))
+        
+u=Vector(3,3)
+w=u.scalar(2)
+print(w)
