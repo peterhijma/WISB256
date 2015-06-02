@@ -1,0 +1,9 @@
+f = open('euler18', 'r')
+a = []
+for line in f:
+    h = line
+    wordList = re.sub("[^\w]", " ",  h).split()
+    a.append(wordList)
+    
+en dan op het eind moet je nog 
+f.close()

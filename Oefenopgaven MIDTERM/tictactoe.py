@@ -1,30 +1,46 @@
-#dit programma test winnaar van spelsituatie tic-tac-toe
+rij1 = list(str(input()))
+rij2 = list(str(input()))
+rij3 = list(str(input()))
+spel = [rij1,rij2,rij3]
 
-import sys
-import math
-import os
+def win(a,b,c):
+    if a == b:
+        if b == c:
+            if a == '1':
+                return "Player 1 wins"
+            if a == '2':
+                return "Player 2 wins"
+    return None
+def horz(spel):
+    for i in range(0,3):
+        result = win(spel[i][0],spel[i][1],spel[i][2])
+        if(result != None):
+            return result
+    return None
+    
+def vert(spel):
+    for i in range(0,3):
+        result = win(spel[0][i],spel[1][i],spel[2][i])
+        if(result != None):
+            return result
+    return None
+    
+def diag(spel):
+    diag1 = win(spel[0][0],spel[1][1],spel[2][2])
+    diag2 = win(spel[2][0],spel[1][1],spel[0][2])
+    if(diag1 != None):
+        return diag1
+    if(diag2 != None):
+        return diag2
+    return None
+    
+def bereken(spel):
+    if(horz(spel) != None):
+        return horz(spel)
+    if(vert(spel) != None):
+        return vert(spel)    
+    if(diag(spel) != None):
+        return diag(spel)
+    return "No winner"
 
-rij1=list(str(input()))
-rij2=list(str(input()))
-rij3=list(str(input()))
-
-for i in range(0,3):
-    if rij1[i]=='0' or rij1[i]=='1' or rij1[i]=='2':
-        True
-    else:
-        print('Geef aub realistische spelsituatie')
-
-for j in range(0,3):
-    if rij2[j]=='0' or rij2[j]=='1' or rij2[j]=='2':
-        True
-    else:
-        print('Geef aub realistische spelsituatie')
-
-for k in range(0,3):
-    if rij3[k]=='0' or rij3[k]=='1' or rij3[k]=='2':
-        True
-    else:
-        print('Geef aub realistische spelsituatie')
-        
-if rij1[0]==rij1[1]==rij1[2] or rij2[0]==rij2[1]==rij2[2] or rij3[0]==rij3[1]==rij3[2]:
-    if rij1==1
+print(bereken(spel))
